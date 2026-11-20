@@ -6,7 +6,7 @@
 /*   By: andrefe2 <andrefe2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:18:58 by andrefe2          #+#    #+#             */
-/*   Updated: 2026/11/19 16:41:01 by andrefe2         ###   ########.fr       */
+/*   Updated: 2026/11/20 12:27:04 by andrefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,33 @@ int	ft_putnbr(int n)
 {
 	long	nb;
 	int		count;
+	int		result;
 
 	count = 0;
 	nb = n;
 	if (nb < 0)
 	{
-		count += ft_putchar('-');
+		result = ft_putchar('-');
+		if (result == -1)
+			return (-1);
+		count++;
 		nb = -nb;
 	}
-	if(nb >= 10)
-		count += ft_putnbr(nb / 10);
-	count += ft_putchar((nb % 10) + '0');
-	return (count);
+	if (nb >= 10)
+	{
+		result = ft_putnbr(nb / 10);
+		if (result == -1)
+			return (-1);
+		count += result;
+	}
+	result = ft_putchar((nb % 10) + '0');
+	if (result == -1)
+		return (-1);
+	return (count + 1);
 }
-
+/*
+int	main(void)
+{
+	printf("\n%i", ft_putnbr(-42));
+}
+*/

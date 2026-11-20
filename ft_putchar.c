@@ -6,13 +6,13 @@
 /*   By: andrefe2 <andrefe2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:17:33 by andrefe2          #+#    #+#             */
-/*   Updated: 2026/11/19 16:40:56 by andrefe2         ###   ########.fr       */
+/*   Updated: 2026/11/20 10:30:05 by andrefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(int c)
+int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
