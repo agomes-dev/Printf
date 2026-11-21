@@ -6,7 +6,7 @@
 /*   By: andrefe2 <andrefe2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:18:23 by andrefe2          #+#    #+#             */
-/*   Updated: 2026/11/20 10:40:01 by andrefe2         ###   ########.fr       */
+/*   Updated: 2026/11/21 15:40:03 by andrefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putstr(char *s)
 {
-	int	i;
+	int	i;	
 	int	result;
 
 	i = 0;

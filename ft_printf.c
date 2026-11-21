@@ -6,7 +6,7 @@
 /*   By: andrefe2 <andrefe2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 13:49:02 by andrefe2          #+#    #+#             */
-/*   Updated: 2026/11/20 15:09:12 by andrefe2         ###   ########.fr       */
+/*   Updated: 2026/11/21 15:35:20 by andrefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,46 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+/*
+int	main(void)
+{
+	char	*s = "HELLO";
+	printf("STRING TEST:\n");
+	printf("The string is: %s\n", s);
+	ft_printf("The string is: %s\n", s);
+
+	char	c = 'A';
+	printf("CHAR TEST:\n");
+	printf("The char value is: %c\n", c);
+	ft_printf("The char value is: %c\n", c);
+
+	int	x;
+	printf("POINTERS TEST:\n");
+	printf("Adress of x = %p\n", &x);
+	ft_printf("Adress of x = %p\n", &x);
+
+	int	i = 10;
+	printf("INTEGERS TEST:\n");
+	printf("The int value is: %i\n", i);
+	ft_printf("The int value is: %i\n", i);
+
+	unsigned int	a = 200;
+	printf("HEXADECIMAL TEST:\n");
+	printf("The hexa(x) value is: %x\n", a);
+	printf("The hexa(X) value is: %X\n", a);
+	ft_printf("The hexa(x) value is: %x\n", a);
+	ft_printf("The hexa(X) value is: %X\n", a);
+
+	printf("PERCENT TEST:\n");
+	printf("Printing %%\n");
+	ft_printf("Printing %%\n");
+
+	char	*str = "ANDRE";
+	int	f = 3120;
+	int	l;
+	printf("MULTIPLE VARIABLES TEST:\n");
+	printf("Adress: %p, Int value: %i, Hexadecimal: %x, String: %s\n", &l,f,f,str);
+	ft_printf("Adress: %p, Int value: %i, Hexadecimal: %x, String: %s\n", &l,f,f,str);
+
+}
+*/
