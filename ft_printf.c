@@ -6,7 +6,7 @@
 /*   By: andrefe2 <andrefe2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 13:49:02 by andrefe2          #+#    #+#             */
-/*   Updated: 2026/11/21 15:35:20 by andrefe2         ###   ########.fr       */
+/*   Updated: 2026/11/23 14:26:42 by andrefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,19 @@ static int	ft_percent_type(const char type, va_list *args)
 	return (-1);
 }
 
-int	ft_printf(const char *format, ...)
+static int	ft_write_format(const char *format, va_list *args)
 {
-	va_list	args;
-	int		i;
-	int		result;
-	int		count;
+	int	i;
+	int	result;
+	int	count;
 
 	i = 0;
 	count = 0;
-	va_start(args, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			result = ft_percent_type(format[i + 1], &args);
+			result = ft_percent_type(format[i + 1], args);
 			i++;
 		}
 		else
@@ -55,8 +53,22 @@ int	ft_printf(const char *format, ...)
 		count += result;
 		i++;
 	}
-	va_end(args);
 	return (count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		result;
+	int		count;
+
+	count = 0;
+	if (format == NULL)
+		return (-1);
+	va_start(args, format);
+	result = ft_write_format(format, &args);
+	va_end(args);
+	return (result);
 }
 /*
 int	main(void)
@@ -92,12 +104,7 @@ int	main(void)
 	printf("Printing %%\n");
 	ft_printf("Printing %%\n");
 
-	char	*str = "ANDRE";
-	int	f = 3120;
-	int	l;
-	printf("MULTIPLE VARIABLES TEST:\n");
-	printf("Adress: %p, Int value: %i, Hexadecimal: %x, String: %s\n", &l,f,f,str);
-	ft_printf("Adress: %p, Int value: %i, Hexadecimal: %x, String: %s\n", &l,f,f,str);
-
+	ft_printf("%d\n",printf(NULL));
+	printf("%d\n", ft_printf(NULL));
 }
 */
