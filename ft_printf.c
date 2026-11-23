@@ -6,7 +6,7 @@
 /*   By: andrefe2 <andrefe2@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 13:49:02 by andrefe2          #+#    #+#             */
-/*   Updated: 2026/11/23 14:26:42 by andrefe2         ###   ########.fr       */
+/*   Updated: 2026/11/23 14:51:36 by andrefe2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		result;
-	int		count;
 
-	count = 0;
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
